@@ -24,8 +24,13 @@ Pod::Spec.new do |s|
   files = files.map {|file| file.to_path}
   s.requires_arc = files
 
-  s.dependency 'FBRetainCycleDetector', '~> 0.1'
-  s.dependency 'FBAllocationTracker', '~> 0.1'
+  s.dependency 'FBRetainCycleDetector', :git => 'https://github.com/hssdx/FBRetainCycleDetector.git', :branch => 'master' 
+
+  # '~> 0.1'
+  
+  s.dependency 'FBAllocationTracker', :git => 'https://github.com/hssdx/FBAllocationTracker.git', :branch => 'master'
+
+  # '~> 0.1'
   
   s.framework = "Foundation", "CoreGraphics", "UIKit"
   s.library = 'c++'
