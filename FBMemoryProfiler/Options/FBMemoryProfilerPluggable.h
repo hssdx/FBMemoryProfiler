@@ -29,7 +29,7 @@
 /**
  When memory profiler finds retain cycles plugins can subscribe to get them.
  */
-- (void)memoryProfilerDidFindRetainCycles:(nonnull NSSet *)retainCycles;
+- (void)memoryProfilerDidFindRetainCycles:(nonnull NSSet *)retainCycles forClass:(NSString *)className;
 
 /**
  If you want to do additional cleanup after marking new generations.

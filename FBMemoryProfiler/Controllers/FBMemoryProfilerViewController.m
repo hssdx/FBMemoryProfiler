@@ -277,8 +277,8 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
       // only tell plugins if we really found something
       if ([retainCycles count] > 0) {
         for (id<FBMemoryProfilerPluggable> plugin in _profilerOptions.plugins) {
-          if ([plugin respondsToSelector:@selector(memoryProfilerDidFindRetainCycles:)]) {
-            [plugin memoryProfilerDidFindRetainCycles:retainCycles];
+            if ([plugin respondsToSelector:@selector(memoryProfilerDidFindRetainCycles:forClass:)]) {
+            [plugin memoryProfilerDidFindRetainCycles:retainCycles forClass:className];
           }
         }
       }
